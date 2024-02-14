@@ -1,6 +1,11 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
 
 export default function Card(props) {
+  const navigate = useNavigate()
+  const visitDetails = () => {
+    navigate(`/experiencedetails/${props.id}`)
+  }
   return (
     <div >
       <div class="card" style={{marginBottom: "2%", marginTop: "2%"}}>
@@ -10,7 +15,7 @@ export default function Card(props) {
           <p class="card-text">
           {props.description}
           </p>
-          <button href="/experiencedetails" class="btn btn-primary">
+          <button class="btn btn-primary" onClick={visitDetails}>
             More Details
           </button>
           
